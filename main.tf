@@ -1,13 +1,27 @@
 resource "aws_s3_bucket" "example" {
-  bucket = "example"
+  bucket = "my-tf-example-bucket"
+    tags = {
+      Name        = "MyS3Bucket"
+      Environment = "Production"
+    }
 }
-
-resource "aws_s3_bucket_public_access_block" "example" {
+resource "aws_s3_bucket_acl" "example" {
   bucket = aws_s3_bucket.example.id
-
-  block_public_policy     = false // This is default, so you can probably remove this line
-  restrict_public_buckets = false // same as above
-  block_public_acls       = true 
-  ignore_public_acls      = true 
+  acl    = "private"
 }
-
+resource "aws_s3_bucket" "log_bucket" {
+  bucket = "my-tf-log-bucket"
+    tags = {
+      Name        = "MyLogBucket"
+      Environment = "Production"
+    }
+}
+resource "aws_s3_bucket_acl" "log_bucket_acl" {
+  bucket = aws_s3_bucket.log_bucket.id
+  acl    = "log-delivery-write"
+}
+resource "aws_s3_bucket_logging" "example" {
+  bucket        = aws_s3_bucket.example.id
+  target_bucket = aws_s3_bucket.log_bucket.id
+  target_prefix = "log/"
+}
