@@ -26,7 +26,7 @@ jobs:
   pull_request:
     branches:
       - main
-      jobs:
+        jobs:
         terraform:
           runs-on: ubuntu-latest
           steps:
