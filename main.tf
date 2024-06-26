@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-example-bucket"
+  bucket = "my-tf-example-bucket1"
     tags = {
       Name        = "MyS3Bucket"
       Environment = "Dev"
@@ -10,7 +10,7 @@ resource "aws_s3_bucket_acl" "example" {
   acl    = "private"
 }
 resource "aws_s3_bucket" "log_bucket" {
-  bucket = "my-tf-log-bucket"
+  bucket = "my-tf-log-bucket1"
     tags = {
       Name        = "MyLogBucket"
       Environment = "Dev"
