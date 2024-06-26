@@ -21,3 +21,4 @@ data "aws_iam_policy_document" "allow_access_from_another_account" {
     ]
   }
 }
+
