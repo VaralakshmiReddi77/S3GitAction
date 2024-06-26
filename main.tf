@@ -2,7 +2,7 @@ resource "aws_s3_bucket" "example" {
   bucket = "my-tf-example-bucket"
     tags = {
       Name        = "MyS3Bucket"
-      Environment = "Production"
+      Environment = "Dev"
     }
 }
 resource "aws_s3_bucket_acl" "example" {
@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "log_bucket" {
   bucket = "my-tf-log-bucket"
     tags = {
       Name        = "MyLogBucket"
-      Environment = "Production"
+      Environment = "Dev"
     }
 }
 resource "aws_s3_bucket_acl" "log_bucket_acl" {
