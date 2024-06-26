@@ -4,22 +4,7 @@ variable "billing_mode" {
   type        = string
 }
 
-variable "encryption" {
-  default     = true
-  description = "Whether or not to enable encryption at rest using an AWS managed Customer Master Key. If enabled is false then server-side encryption is set to AWS owned CMK (shown as DEFAULT in the AWS console). If enabled is true then server-side encryption is set to AWS managed CMK (shown as KMS in the AWS console). The "
-  type        = bool
-}
 
-variable "hash_key" {
-  description = "hash key name"
-  type        = string
-}
-
-variable "hash_key_attributes" {
-  description = "hash key attributes"
-  default     = {}
-  type        = map(string)
-}
 
 variable "name" {
   description = "Name of DynamoDB table to create"
@@ -32,11 +17,7 @@ variable "read_capacity" {
   type        = number
 }
 
-variable "tags" {
-  default     = {}
-  description = "tags to give the table"
-  type        = map(string)
-}
+
 
 variable "write_capacity" {
   default     = 20
