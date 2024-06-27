@@ -10,6 +10,5 @@ resource "aws_ssm_parameter" "example1" {
   type            = "String"
   value           = "Varalakshmi"
   description     = "SSM Parameter for running date command."
-  allowed_pattern = "^[a-zA-Z]{1,10}$"
   overwrite = true
 }
