@@ -1,3 +1,4 @@
+% terraform import aws_ssm_parameter.my_param /my_path/my_paramname
 resource "awscc_ssm_parameter" "example1" {
   name            = "command1"
   type            = "String"
