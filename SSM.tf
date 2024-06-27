@@ -2,7 +2,7 @@ resource "awscc_ssm_parameter" "example1" {
   name            = "command1"
   type            = "String"
   value           = "date"
-  overwrite       = "true"
+  overwrite       = true
   description     = "SSM Parameter for running date command."
   allowed_pattern = "^[a-zA-Z]{1,10}$"
 }
