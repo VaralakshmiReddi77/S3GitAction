@@ -6,7 +6,7 @@ resource "aws_ssm_parameter" "SampleSSMUpdate" {
 }
 
 resource "awscc_ssm_parameter" "SampleSSMUpdate1" {
-  name            = "SampleSSMUpdate1"
+  name            = "Test1"
   type            = "SecureString"
   value           = "Varalakshmi"
   overwrite = true
