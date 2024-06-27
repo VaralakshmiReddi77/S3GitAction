@@ -11,3 +11,4 @@ resource "awscc_ssm_parameter" "configcred" {
 data "aws_ssm_parameters_by_path" "configcred" {
   path = "/DBPassword"
 }
+
