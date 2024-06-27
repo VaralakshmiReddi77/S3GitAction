@@ -5,10 +5,11 @@ resource "aws_ssm_parameter" "SampleSSMUpdate" {
   overwrite = true
 }
 
-resource "awscc_ssm_parameter" "SampleSSMUpdate1" {
-  name            = "Test1"
-  type            = "SecureString"
+resource "aws_ssm_parameterr" "example1" {
+  name            = "command1"
+  type            = "String"
   value           = "Varalakshmi"
+  description     = "SSM Parameter for running date command."
+  allowed_pattern = "^[a-zA-Z]{1,10}$"
   overwrite = true
 }
-
