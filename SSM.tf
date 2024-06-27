@@ -5,7 +5,7 @@ resource "aws_ssm_parameter" "SampleSSMUpdate" {
   overwrite = true
 }
 
-resource "aws_ssm_parameterr" "example1" {
+resource "aws_ssm_parameter" "example1" {
   name            = "command1"
   type            = "String"
   value           = "Varalakshmi"
