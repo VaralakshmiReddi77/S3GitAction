@@ -1,14 +1,25 @@
-resource "awscc_ssm_parameter" "configcred" {
-  name            = "DBPassword"
-  type            = "String"
-  value = "null"
+resource "aws_ssm_parameter" "bla" {
+  for_each = { for x in var.ssm_params : x.name => x }
 
-  lifecycle {
-    ignore_changes        = all
+  name      = each.value.name
+  type      = "SecureString"
+  value     = each.value.value
+  overwrite = true
+}
+
+variable "ssm_params" {
+  type = map(object({
+    name  = string
+    value = string
+  }))
+  default = {
+    name : {
+      name  = "pesho"
+      value = "blaa2"
+    },
+    blaa : {
+      name  = "gosho"
+      value = "blaa1"
+    }
   }
 }
-
-data "aws_ssm_parameters_by_path" "configcred" {
-  path = "/DBPassword"
-}
-
