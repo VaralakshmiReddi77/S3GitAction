@@ -1,4 +1,15 @@
-% terraform import aws_ssm_parameter.my_param /my_path/my_paramname
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.55.0"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+}
 resource "awscc_ssm_parameter" "example1" {
   name            = "command1"
   type            = "String"
