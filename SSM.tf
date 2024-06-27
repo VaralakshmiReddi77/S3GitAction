@@ -5,8 +5,8 @@ resource "aws_ssm_parameter" "SampleSSMUpdate" {
   overwrite = true
 }
 
-resource "awscc_ssm_parameter" "DBPassword" {
-  name            = "DBPassword"
+resource "awscc_ssm_parameter" "SampleSSMUpdate1" {
+  name            = "SampleSSMUpdate1"
   type            = "SecureString"
   value           = "Varalakshmi"
   overwrite = true
