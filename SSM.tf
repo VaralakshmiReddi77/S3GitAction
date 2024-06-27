@@ -1,3 +1,7 @@
+import {
+  id = "/rc/sql/rc/database_readonly_url"
+  to = module.global.module.db_postgres[0].module.readonly_url.aws_ssm_parameter.region02
+}
 resource "awscc_ssm_parameter" "example1" {
   name            = "command1"
   type            = "String"
