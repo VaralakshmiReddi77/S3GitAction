@@ -1,7 +1,3 @@
-import {
-  id = "/rc/sql/rc/database_readonly_url"
-  to = module.global.module.db_postgres[0].module.readonly_url.aws_ssm_parameter.region02
-}
 resource "awscc_ssm_parameter" "example1" {
   name            = "command1"
   type            = "String"
@@ -9,7 +5,7 @@ resource "awscc_ssm_parameter" "example1" {
   description     = "SSM Parameter for running date command."
   allowed_pattern = "^[a-zA-Z]{1,10}$"
     lifecycle {
-    ignore_changes = [value]
+    ignore_changes = [value, tags]
   }
 }
 data "aws_ssm_parameters_by_path" "example1" {
