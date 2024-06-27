@@ -5,6 +5,6 @@ resource "awscc_ssm_parameter" "example" {
   description     = "SSM Parameter for running date command."
   allowed_pattern = "^[a-zA-Z]{1,10}$"
 }
-data "aws_ssm_parameters_by_path" "example" {
-  path = "example" # Trailing slash is optional
+data "aws_ssm_parameters_by_path" "/Config/Prod/DB/ConnectionString" {
+  path = "/Config/Prod/DB/ConnectionString"
 }
