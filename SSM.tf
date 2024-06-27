@@ -15,11 +15,11 @@ variable "ssm_params" {
   default = {
     name : {
       name  = "pesho"
-      value = "blaa2"
+      value = "blaa22"
     },
     blaa : {
       name  = "gosho"
-      value = "blaa1"
+      value = "blaa11"
     }
   }
 }
