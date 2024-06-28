@@ -1,14 +1,13 @@
-resource "aws_ssm_parameter" "SampleSSMUpdate" {
-  name      = "Test"
-  type      = "SecureString"
-  value     = "Taosif"
+resource "aws_ssm_parameter" "/systems/fsystem01/config" {
+  name      = "/systems/fsystem01/config"
+  type      = "String"
+  value     = "{"url" : "https://www.website1.com"}"
   overwrite = true
 }
 
-resource "aws_ssm_parameter" "example1" {
-  name            = "command1"
+resource "aws_ssm_parameter" "/systems/fsystem02/config" {
+  name            = "/systems/fsystem02/config"
   type            = "String"
-  value           = "Varalakshmi"
-  description     = "SSM Parameter for running date command."
+  value           = "{"url" : "https://www.ESL.com"}"
   overwrite = true
 }
